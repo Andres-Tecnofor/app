@@ -34,8 +34,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
   deployment:
     runs-on: ubuntu-latest
-    environment: Production
-    steps:
-      - name: deploy
+    - environment: 
+        name: develop
+        url: https://github.com
+      steps:
+        - name: deploy
+    - environment: 
+        name: production
+        url: https://github.com
+      steps:
+        - name: deploy
